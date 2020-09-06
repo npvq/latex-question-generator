@@ -1,0 +1,223 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage{import}
+
+% Use a larger font size
+\usepackage[fontsize=14pt]{scrextend}
+
+% Symbol and utility packages
+\usepackage{cancel, textcomp}
+\usepackage[nointegrals]{wasysym}
+
+% Extras
+\usepackage{tikz-cd}  % For drawing commutative diagrams easily
+
+\input{./template.sty}
+
+% Sometimes helpful macros
+
+\begin{document}
+
+Note: (a) is always the right answer. To use this question bank, scramble the answers. 
+
+\newpage
+
+\section{Derivatives}
+
+\subsection{Basic Derivatives}
+\begin{enumerate}
+		\item \(\diff{\sin{x}}{x}\) $\Dx$
+	\begin{enumerate}
+		\item \(\cos{x}\)
+		\item \(\tan{x}\)
+		\item \(\sec{x}\)
+		\item \(\csc{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\cos{x}}{x}\)
+	\begin{enumerate}
+		\item \(-\sin{x}\)
+		\item \(-\cot{x}\)
+		\item \(\sin{x}\)
+		\item \(\sec{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{(-\sin{x})}{x}\)
+	\begin{enumerate}
+		\item \(-\cos{x}\)
+		\item \(-\tan{x}\)
+		\item \(\cos{x}\)
+		\item \(-\csc{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{(-\cos{x})}{x}\)
+	\begin{enumerate}
+		\item \(\sin{x}\)
+		\item \(-\cot{x}\)
+		\item \(-\sin{x}\)
+		\item \(\sec{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\tan{x}}{x}\)
+	\begin{enumerate}
+		\item \(\sec^2{x}\)
+		\item \(-\cot{x}\)
+		\item \(\cot^2{x}\)
+		\item \(\sec{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\cot{x}}{x}\)
+	\begin{enumerate}
+		\item \(-\csc^2{x}\)
+		\item \(-\tan{x}\)
+		\item \(\csc^2{x}\)
+		\item \(-\sec^2{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\sec{x}}{x}\)
+	\begin{enumerate}
+		\item \(\tan{x} \sec{x}\)
+		\item \(-\tan{x} \sec{x}\)
+		\item \(\csc^2{x}\)
+		\item \(-\cos^2{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\csc{x}}{x}\)
+	\begin{enumerate}
+		\item \(-\cot{x} \csc{x}\)
+		\item \(\cot{x} \csc{x}\)
+		\item \(\sec^2{x}\)
+		\item \(-\tan{x} \sec{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\arcsin{x}}{x}\)
+	\begin{enumerate}
+		\item \(\frac{1}{\sqrt{1-x^2}}\)
+		\item \(\frac{1}{\sqrt{1+x^2}}\)
+		\item \(\frac{1}{1+x^2}\)
+		\item \(\arccos{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\arccos{x}}{x}\)
+	\begin{enumerate}
+		\item \(-\frac{1}{\sqrt{1-x^2}}\)
+		\item \(-\frac{1}{\sqrt{1+x^2}}\)
+		\item \(\frac{1}{\sqrt{1-x^2}}\)
+		\item \(-\arcsin{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\arctan{x}}{x}\)
+	\begin{enumerate}
+		\item \(\frac{1}{x+1}\)
+		\item \(\frac{1}{\sqrt{1+x^2}}\)
+		\item \(\frac{1}{\sqrt{1-x^2}}\)
+		%\item \(\arcsec^2{x}\)
+	\end{enumerate}
+
+
+		%\item \(\diff{\arccot{x}}{x}\)
+	\begin{enumerate}
+		\item \(-\frac{1}{x+1}\)
+		\item \(-\frac{1}{\sqrt{1+x^2}}\)
+		\item \(-\frac{1}{\sqrt{1-x^2}}\)
+		%\item \(-\arccsc^2{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{x^2}{x}\)
+	\begin{enumerate}
+		\item \(2x\)
+		\item \(x\)
+		\item \(2x^2\)
+		\item \(x^2\)
+	\end{enumerate}
+
+
+		\item \(\diff{x^3}{x}\)
+	\begin{enumerate}
+		\item \(3x^2\)
+		\item \(x^2\)
+		\item \(3x\)
+		\item \(3x^3\)
+	\end{enumerate}
+
+
+		\item \(\diff{x^4}{x}\)
+	\begin{enumerate}
+		\item \(4x^3\)
+		\item \(3x^3\)
+		\item \(x^4\)
+		\item \(4x\)
+	\end{enumerate}
+
+
+		\item \(\diff{x^5}{x}\)
+	\begin{enumerate}
+		\item \(5x^4\)
+		\item \(4x^5\)
+		\item \(x^4\)
+		\item \(5x^2\)
+	\end{enumerate}
+
+
+		\item \(\diff{e^x}{x}\)
+	\begin{enumerate}
+		\item \(e^x\)
+		\item \(e^x \log_2{e}\)
+		\item \(x^e\)
+		\item \(\ln{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{2^x}{x}\)
+	\begin{enumerate}
+		\item \(2^x \ln{2}\)
+		\item \(e^x \log_2{x}\)
+		\item \(ex^2\)
+		\item \(2^x\ln{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\pi^x}{x}\)
+	\begin{enumerate}
+		\item \(\pi^x \ln{\pi}\)
+		\item \(e^{\pi x} \ln{\pi}\)
+		\item \(\pi x^2\)
+		\item \(\pi^x \log_{\pi}{x}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\ln{x}}{x}\)
+	\begin{enumerate}
+		\item \(\frac{1}{x}\)
+		\item \(\frac{1}{e^x}\)
+		\item \(\frac{1}{\ln{x}}\)
+		\item \(\frac{1}{x-1}\)
+	\end{enumerate}
+
+
+		\item \(\diff{\log_2{x}}{x}\)
+	\begin{enumerate}
+		\item \(\frac{1}{x \ln{2}}\)
+		\item \(\frac{\ln{2}}{x}\)
+		\item \(\frac{\ln{2}}{\ln{x}}\)
+		\item \(\frac{2}{x-1}\)
+	\end{enumerate}
+
+\end{enumerate}
+
+\subsection{Wolfram Selected Derivatives}
+
+
+
+\end{document}
