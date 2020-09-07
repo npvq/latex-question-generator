@@ -9,22 +9,38 @@ randomVar = lambda: random.choices([random.choice(common_variables), random.choi
 
 # Some functions
 random_functions = {  # weight : func
-	10: sp.exp,  # e**x
-	5: sp.log,
-	10: sp.sin,
-	10: sp.cos,
-	5: sp.tan,
-	5: sp.cot,
-	3: sp.sec,
-	3: sp.csc,
-	3: sp.asin,
-	3: sp.acos,
-	3: sp.atan,
-	3: sp.acot,
-	1: sp.asec,
-	1: sp.acsc,
-	10: (lambda x: x ** ( random.choices([2, 3, 4, 5, 6, 7, 8, 9, 10], weights=[10, 6, 6, 6, 5, 4, 3, 3, 3], k=1)[0] )),  # x**a
-	5: (lambda x: random.choice([-1, 1]) * random.randint(1, 10))  # random constant term 
+	50: sp.exp,  # e**x
+	30: sp.log,
+	50: sp.sin,
+	50: sp.cos,
+	15: sp.tan,
+	15: sp.cot,
+	10: sp.sec,
+	10: sp.csc,
+	10: sp.asin,
+	10: sp.acos,
+	10: sp.atan,
+	10: sp.acot,
+	2: sp.asec,
+	2: sp.acsc,
+	10: sp.sinh,
+	10: sp.cosh,
+	5: sp.tanh,
+	5: sp.coth,
+	2: sp.sech,
+	2: sp.csch,
+	1: sp.asinh,
+	1: sp.acosh,
+	1: sp.atanh,
+	1: sp.acoth,
+	1: sp.asech,
+	1: sp.acsch,
+	25: sp.sqrt,
+	25: sp.cbrt,
+	50: (lambda x: x ** ( random.choices([2, 3, 4, 5, 6, 7, 8, 9, 10], weights=[10, 6, 6, 6, 5, 4, 3, 3, 3], k=1)[0] )),  # x**a
+	30: (lambda x: random.choice([-1, 1]) * random.randint(1, 10)),  # random constant term
+	30: (lambda x: random.randint(2, 10) ** x),  # random constant term
+	10: (lambda x: sp.real_root(x, random.randint(4, 10)))
 }
 
 def randomFuncNoComp(inner):
@@ -32,6 +48,7 @@ def randomFuncNoComp(inner):
 
 
 def randomFunc(variable, recur=0.67):
+	assert recur < 1
 	if random.uniform(0.001, 1) < recur:  # Recursion
 		chance = random.randint(1, 20)
 		if chance <= 4:
@@ -50,11 +67,17 @@ def randomFunc(variable, recur=0.67):
 
 # print(sp.latex(sp.simplify(random.choices(list(random_functions.items()), weights=list(random_functions.keys()), k=1)[0](randomVar()))))
 
-variable = randomVar()
+def randomProblem(recur=0.67, simplify=False):
+	variable = randomVar()
+	f = randomFunc(variable, recur=recur)
+	df = sp.diff(f, variable)
+	if simplify:
+		return (sp.latex(sp.Derivative(sp.simplify(f))), sp.latex(sp.simplify(df)))
+	else:
+		return (sp.latex(sp.Derivative(f)), sp.latex(df))
 
-f = randomFunc(variable)
-df = sp.diff(f, variable)
 
-print(sp.latex(sp.simplify(f)))
-print(sp.latex(sp.simplify(df)))
+if __name__ == "__main__":
+	for i in range(10):
+		print(randomProblem())
 
