@@ -1,4 +1,5 @@
-from Functions.function import randomProblem
+# IMPORTANT: Rename the sympy folder to "sympy" and add current path to pythonpath in order to use.
+from sympy.function import randomProblem
 
 start = r"""\documentclass[10pt,twocolumn]{article}
 \usepackage[fontsize=14pt]{scrextend}
